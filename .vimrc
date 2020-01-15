@@ -10,7 +10,6 @@ set nocompatible
 set number
 
 " enable syntax and plugins (for netrw)
-set t_Co=16
 packadd! dracula
 colorscheme dracula
 syntax enable
