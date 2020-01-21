@@ -1,26 +1,38 @@
-""" Filetype Plugin
-filetype plugin on
+" PATH: ~/.config/nvim/
+" TITLE: init.vim
+" AUTHOR: Bob Sullivan @BobSulivn
+" PURPOSE: Configuration/settings for neovim
 
-""" Syntax Highlighting
-syntax on
+" COLORS {{{
+syntax on		" Enable syntax highlighting
 
-""" Fix issues with tmux and background color
+" Fix issues with tmux and background color
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+" }}}
 
-""" Line Numbers
+" SPACES AND TABS {{{
+set expandtab		" Use space instead of tabs
+filetype indent on
+filetype plugin on
+" }}}
+
+" UI AND LAYOUT {{{
 set number
+set showcmd		" Show command in bottom bar
+set cursorline	        " Highlight current line
+" }}}
 
-" FINDING FILES
+" FINDING FILES {{{
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
-set path+=**
+set path+=**            
+set wildmenu             " Display all matching files when we tab complete
+" }}}
 
-" Display all matching files when we tab complete
-set wildmenu
 
 """ CUSTOM PLUGINS
 call plug#begin()
