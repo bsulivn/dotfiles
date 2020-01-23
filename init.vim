@@ -21,7 +21,8 @@ filetype plugin on
 " }}}
 
 " UI AND LAYOUT {{{
-set number
+set number              " Hybrid line numbers
+set relativenumber
 set showcmd		" Show command in bottom bar
 set cursorline	        " Highlight current line
 " }}}
@@ -37,7 +38,12 @@ set wildmenu             " Display all matching files when we tab complete
 """ CUSTOM PLUGINS
 call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'vim-pandoc/vim-pandoc'                    " Markdown file support
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 """ ColorScheme
 colorscheme dracula
+
+" Allow pandoc to handle Markdown files
+let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
