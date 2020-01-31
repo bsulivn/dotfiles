@@ -40,10 +40,12 @@ call plug#begin()
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-pandoc/vim-pandoc'                    " Markdown file support
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 """ ColorScheme
 colorscheme dracula
-
+let g:airline_theme='dracula'
 " Allow pandoc to handle Markdown files
 let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
