@@ -1,0 +1,8 @@
+prefix_rule(pattern=["xcodebuild", "test"], decision="allow")
+prefix_rule(pattern=["xcodebuild", "-project", "HabitHeatMap/HabitHeatMap.xcodeproj", "-scheme", "HabitHeatMap", "-showdestinations"], decision="allow")
+prefix_rule(pattern=["uv", "run"], decision="allow")
+prefix_rule(pattern=["uv", "sync", "--all-groups"], decision="allow")
+prefix_rule(pattern=["gh", "issue"], decision="allow")
+prefix_rule(pattern=["cargo", "audit"], decision="allow")
+prefix_rule(pattern=["gh", "api", "repos/mpizenberg/elm-indexeddb/license", "--jq", "{license:.license.spdx_id,path,html_url}"], decision="allow")
+prefix_rule(pattern=["gh", "api", "repos/mpizenberg/elm-indexeddb/contents/src/IndexedDb.elm", "--jq", ".content"], decision="allow")

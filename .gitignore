@@ -1,0 +1,34 @@
+.DS_Store
+*.bak
+*.log
+*.sqlite*
+*.db
+*.db-*
+*.history
+*.history.*
+*.jsonl
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+
+**/node_modules/
+**/automatic_backups/
+**/cache/
+**/logs/
+
+# Authentication and machine state
+.config/gh/hosts.yml
+.codex/auth.json
+.codex/history.jsonl
+.codex/installation_id
+.codex/shell_snapshots/
+.codex/state*.sqlite*
+.codex/*_history_*.sqlite*
+.claude.json
+.claude/history.jsonl
+.claude/settings.local.json
+
+# This local file currently contains an accidentally cached sign-in page.
+.cspell_global_words.txt

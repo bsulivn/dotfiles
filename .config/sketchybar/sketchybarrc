@@ -1,0 +1,201 @@
+#!/bin/bash
+
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+# ------------------------------------------------------------
+# Palette
+# ------------------------------------------------------------
+
+BAR_BG=0xd90f1117
+TEXT=0xffd8dee9
+MUTED=0xff6b7280
+GREEN=0xff86efac
+GOLD=0xfff6c453
+ACTIVE_BG=0xff17211b
+BORDER=0xff2a2f3a
+
+# ------------------------------------------------------------
+# Bar
+# ------------------------------------------------------------
+
+sketchybar --bar \
+  position=top \
+  height=38 \
+  color=$BAR_BG \
+  blur_radius=20 \
+  shadow=off \
+  sticky=on \
+  topmost=off \
+  padding_left=10 \
+  padding_right=10 \
+  margin=8 \
+  y_offset=4 \
+  corner_radius=10
+
+# ------------------------------------------------------------
+# Defaults
+# ------------------------------------------------------------
+
+default=(
+  icon.font="JetBrains Mono:Semibold:13.0"
+  label.font="JetBrains Mono:Medium:13.0"
+  "icon.color=$TEXT"
+  "label.color=$TEXT"
+  icon.padding_left=8
+  icon.padding_right=8
+  label.padding_left=8
+  label.padding_right=8
+  background.corner_radius=7
+  background.height=26
+)
+
+sketchybar --default "${default[@]}"
+
+# ------------------------------------------------------------
+# Spaces
+# ------------------------------------------------------------
+
+for sid in 1 2 3 4 5; do
+  space=(
+    space="$sid"
+    icon="$sid"
+    label.drawing=off
+    "icon.color=$MUTED"
+    background.drawing=off
+    "background.color=$ACTIVE_BG"
+    background.border_width=1
+    "background.border_color=$GREEN"
+    script="$PLUGIN_DIR/space.sh"
+    click_script="yabai -m space --focus $sid"
+  )
+
+  sketchybar \
+    --add space "space.$sid" left \
+    --set "space.$sid" "${space[@]}"
+done
+
+# ------------------------------------------------------------
+# Separator
+# ------------------------------------------------------------
+
+sketchybar \
+  --add item separator left \
+  --set separator \
+  icon="│" \
+  icon.color=$MUTED \
+  label.drawing=off \
+  background.drawing=off
+
+# ------------------------------------------------------------
+# Active app
+# ------------------------------------------------------------
+
+sketchybar \
+  --add item front_app left \
+  --set front_app \
+  icon.drawing=off \
+  label="Desktop" \
+  label.color=$GREEN \
+  label.padding_left=8 \
+  script="$PLUGIN_DIR/front_app.sh" \
+  --subscribe front_app front_app_switched
+
+# ------------------------------------------------------------
+# Battery
+# ------------------------------------------------------------
+
+sketchybar \
+  --add item battery right \
+  --set battery \
+  icon.color=$GOLD \
+  label.color=$TEXT \
+  background.drawing=off \
+  update_freq=30 \
+  script="$PLUGIN_DIR/battery.sh"
+
+# ------------------------------------------------------------
+# Clock
+# ------------------------------------------------------------
+
+sketchybar \
+  --add item clock right \
+  --set clock \
+  icon.drawing=off \
+  label.color=$TEXT \
+  background.drawing=off \
+  update_freq=10 \
+  script="$PLUGIN_DIR/clock.sh"
+
+# ------------------------------------------------------------
+# Which-key popup
+# ------------------------------------------------------------
+
+# Remove an earlier copy first so manual config reloads remain idempotent.
+sketchybar --remove '/whichkey\..*/' 2>/dev/null
+sketchybar --remove whichkey 2>/dev/null
+
+# The one-point center item is only an anchor for the native popup.
+sketchybar \
+  --add item whichkey center \
+  --set whichkey \
+  width=1 \
+  padding_left=0 \
+  padding_right=0 \
+  icon.drawing=off \
+  label.drawing=off \
+  background.drawing=off \
+  popup.drawing=off \
+  popup.align=center \
+  popup.height=29 \
+  popup.y_offset=7 \
+  popup.blur_radius=20 \
+  popup.background.color=0xf20f1117 \
+  popup.background.border_width=1 \
+  popup.background.border_color=$BORDER \
+  popup.background.corner_radius=10
+
+sketchybar \
+  --add item whichkey.header popup.whichkey \
+  --set whichkey.header \
+  width=430 \
+  icon="CAPS / SUPER" \
+  icon.width=120 \
+  icon.font="JetBrains Mono:Semibold:13.0" \
+  icon.color=$GREEN \
+  icon.padding_left=14 \
+  icon.padding_right=8 \
+  label="Command Layer" \
+  label.font="JetBrains Mono:Medium:12.0" \
+  label.color=$MUTED \
+  label.padding_left=8 \
+  label.padding_right=14 \
+  background.drawing=on \
+  background.color=$ACTIVE_BG \
+  background.height=27 \
+  background.corner_radius=8
+
+# These fixed rows are updated in place for default, move, and resize modes.
+for row_number in {1..10}; do
+  sketchybar \
+    --add item "whichkey.row${row_number}" popup.whichkey \
+    --set "whichkey.row${row_number}" \
+    width=430 \
+    icon.width=120 \
+    icon.font="JetBrains Mono:Semibold:13.0" \
+    icon.color=$GREEN \
+    icon.padding_left=14 \
+    icon.padding_right=8 \
+    label.font="JetBrains Mono:Medium:13.0" \
+    label.color=$TEXT \
+    label.padding_left=8 \
+    label.padding_right=14 \
+    background.drawing=off
+done
+
+"$PLUGIN_DIR/whichkey-mode.sh" default
+
+# ------------------------------------------------------------
+# Initial update
+# ------------------------------------------------------------
+
+sketchybar --update

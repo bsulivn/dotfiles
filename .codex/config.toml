@@ -1,0 +1,19 @@
+suppress_unstable_features_warning = true
+
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+[features]
+hooks = true
+multi_agent = true
+default_mode_request_user_input = true
+
+[agents.web_researcher]
+description = "Use this agent when you need to research information on the internet, particularly for debugging issues, finding solutions to technical problems, or gathering comprehensive information from multiple sources. This agent excels at finding relevant discussions. Use when you need creative search strategies, thorough investigation, or compilation of findings from multiple sources."
+config_file = "agents/web-researcher.toml"
+
+[plugins."build-ios-apps@openai-curated"]
+enabled = true
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "reasoning", "run-state", "context-used", "five-hour-limit", "weekly-limit", "context-window-size", "task-progress"]
+status_line_use_colors = true

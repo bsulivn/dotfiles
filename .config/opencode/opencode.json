@@ -1,0 +1,84 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "model": "local-llama/local-gemma4-26b-a4b",
+  "agent": {
+    "local-plan": {
+      "description": "Read-only repository exploration, architecture analysis, and implementation planning using the local reasoning model.",
+      "mode": "primary",
+      "model": "local-llama/local-qwen36-35b-a3b",
+      "prompt": "You are the planning agent. Explore before proposing changes. Produce a concise, reviewable implementation plan that identifies affected files, existing patterns to reuse, incremental steps, risks, and verification. Do not modify files, execute commands that alter state, install dependencies, commit, or perform destructive operations. Ask focused questions only when the repository cannot answer them.",
+      "tools": {
+        "edit": false,
+        "bash": false
+      }
+    }
+  },
+  "provider": {
+    "local-llama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local llama-server",
+      "options": {
+        "baseURL": "http://127.0.0.1:8888/v1"
+      },
+      "models": {
+        "local-qwen2.5-coder-32b": {
+          "name": "Qwen2.5-Coder 32B (local)",
+          "limit": {
+            "context": 49152,
+            "output": 4096
+          }
+        },
+        "local-deepseek-r1-qwen-32b": {
+          "name": "DeepSeek-R1 Distill Qwen 32B (local)",
+          "limit": {
+            "context": 49152,
+            "output": 4096
+          }
+        },
+        "local-qwen3-coder-30b-a3b": {
+          "name": "Qwen3-Coder 30B-A3B (local)",
+          "limit": {
+            "context": 131072,
+            "output": 4096
+          }
+        },
+        "local-qwen36-27b": {
+          "name": "Qwen3.6 27B Q5_K_M (local)",
+          "limit": {
+            "context": 65536,
+            "output": 4096
+          }
+        },
+        "local-qwen36-27b-q4": {
+          "name": "Qwen3.6 27B Q4_K_M (local)",
+          "limit": {
+            "context": 65536,
+            "output": 4096
+          }
+        },
+        "local-qwen36-35b-a3b": {
+          "name": "Qwen3.6 35B-A3B (local)",
+          "limit": {
+            "context": 98304,
+            "output": 4096
+          }
+        },
+        "local-gemma4-26b-a4b": {
+          "name": "Gemma 4 26B-A4B Q4_K_M (local)",
+          "limit": {
+            "context": 262144,
+            "output": 4096
+          }
+        },
+        "local-glm47-flash": {
+          "name": "GLM-4.7-Flash 30B-A3B Q4_K_M (local)",
+          "limit": {
+            "context": 131072,
+            "output": 4096
+          }
+        }
+      }
+    }
+  }
+}

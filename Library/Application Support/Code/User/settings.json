@@ -1,0 +1,17 @@
+{
+  "cSpell.diagnosticLevel": "Warning",
+  "cSpell.enabledFileTypes": {
+    "*": true,
+    "json": false,
+    "jsonc": false,
+    "yaml": false
+  },
+  "cSpell.ignoreRegExpList": [
+    "/[A-Z][A-Z0-9_]+(?=[A-Z][a-z]|[^A-Za-z]|$)/g",
+    "/\\$\\$\\$[a-zA-Z0-9]+/g"
+  ],
+  "editor.fontFamily": "'Cascadia Code'",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Nord"
+}
