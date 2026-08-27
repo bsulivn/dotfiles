@@ -33,6 +33,8 @@ ctrl + alt + shift + cmd - 5 : yabai -m space --focus 5
 
 ctrl + alt + shift + cmd - return : open -a Ghostty
 ctrl + alt + shift + cmd - space  : open -a Raycast
+ctrl + alt + shift + cmd - c      : open -a "Visual Studio Code"
+ctrl + alt + shift + cmd - s      : open -a Safari
 
 
 # ------------------------------------------------------------

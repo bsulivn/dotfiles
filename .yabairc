@@ -31,6 +31,12 @@ yabai -m config focus_follows_mouse off
 
 # Window behavior
 yabai -m config window_origin_display default
+yabai -m config window_opacity on
+
+# Keep Visual Studio Code slightly translucent.
+yabai -m rule --remove vscode_opacity >/dev/null 2>&1 || true
+yabai -m rule --add label=vscode_opacity app="^Code$" opacity=0.85
+yabai -m rule --apply vscode_opacity
 
 # Focused window borders
 borders \
