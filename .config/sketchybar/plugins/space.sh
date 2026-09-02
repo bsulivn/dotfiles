@@ -1,8 +1,9 @@
 #!/bin/bash
 
-GREEN=0xff86efac
-MUTED=0xff6b7280
-ACTIVE_BG=0xff17211b
+# Everforest Dark — medium contrast palette
+GREEN=0xffa7c080
+MUTED=0xff859289
+ACTIVE_BG=0xff3d484d
 
 if [ "$SELECTED" = "true" ]; then
   sketchybar --set "$NAME" \

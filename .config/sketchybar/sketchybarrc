@@ -6,13 +6,16 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 # Palette
 # ------------------------------------------------------------
 
-BAR_BG=0xd90f1117
-TEXT=0xffd8dee9
-MUTED=0xff6b7280
-GREEN=0xff86efac
-GOLD=0xfff6c453
-ACTIVE_BG=0xff17211b
-BORDER=0xff2a2f3a
+# Everforest Dark — medium contrast palette
+BAR_BG=0xe62d353b
+TEXT=0xffd3c6aa
+MUTED=0xff859289
+GREEN=0xffa7c080
+GOLD=0xffdbbc7f
+ACTIVE_BG=0xff3d484d
+BORDER=0xff56635f
+AQUA=0xff83c092
+BLUE=0xff7fbbb3
 
 # ------------------------------------------------------------
 # Bar
