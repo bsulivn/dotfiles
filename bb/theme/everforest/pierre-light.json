@@ -1,0 +1,34 @@
+{
+  "name": "Everforest Light",
+  "type": "light",
+  "colors": {
+    "editor.background": "#fdf6e3",
+    "editor.foreground": "#5c6a72",
+    "editorLineNumber.foreground": "#a7aba3",
+    "editorCursor.foreground": "#5c6a72",
+    "editor.selectionBackground": "#e6dcc8",
+    "editor.lineHighlightBackground": "#f3ead3",
+    "editorWhitespace.foreground": "#d3c9b6"
+  },
+  "tokenColors": [
+    { "scope": ["comment", "punctuation.definition.comment"], "settings": { "foreground": "#a7aba3", "fontStyle": "italic" } },
+    { "scope": ["string", "string.quoted", "string.unquoted", "constant.other.symbol"], "settings": { "foreground": "#8da101" } },
+    { "scope": ["string.regexp", "string.escape", "constant.other.caps"], "settings": { "foreground": "#35a77c" } },
+    { "scope": ["constant.numeric", "constant.language", "constant.character"], "settings": { "foreground": "#f57d26" } },
+    { "scope": ["keyword", "keyword.control", "storage", "storage.type", "keyword.operator"], "settings": { "foreground": "#35a77c" } },
+    { "scope": ["entity.name.function", "support.function", "meta.function-call"], "settings": { "foreground": "#4484a8" } },
+    { "scope": ["entity.name.type", "entity.name.class", "entity.name.struct", "support.type", "support.class"], "settings": { "foreground": "#dfa000" } },
+    { "scope": ["entity.name.namespace", "entity.other.inherited-class"], "settings": { "foreground": "#ae3ec9" } },
+    { "scope": ["variable", "variable.parameter", "meta.definition.variable"], "settings": { "foreground": "#5c6a72" } },
+    { "scope": ["variable.other.constant", "constant.other"], "settings": { "foreground": "#f57d26" } },
+    { "scope": ["entity.name.tag", "punctuation.definition.tag"], "settings": { "foreground": "#f85552" } },
+    { "scope": ["entity.name.tag.css", "support.type.property-name"], "settings": { "foreground": "#35a77c" } },
+    { "scope": ["markup.heading"], "settings": { "foreground": "#4484a8", "fontStyle": "bold" } },
+    { "scope": ["markup.bold"], "settings": { "fontStyle": "bold" } },
+    { "scope": ["markup.italic"], "settings": { "fontStyle": "italic" } },
+    { "scope": ["markup.inserted"], "settings": { "foreground": "#8da101" } },
+    { "scope": ["markup.deleted"], "settings": { "foreground": "#f85552" } },
+    { "scope": ["invalid"], "settings": { "foreground": "#f85552" } },
+    { "scope": ["punctuation", "meta.brace"], "settings": { "foreground": "#5c6a72" } }
+  ]
+}

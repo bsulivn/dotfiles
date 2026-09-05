@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+/* Everforest color scheme for bb + IBM Plex fonts.
+   Dark = Everforest dark (medium), Light = Everforest light. */
+
+:root, .light {
+  /* Fonts: fully monospace with IBM Plex Mono throughout the UI and code */
+  --font-sans: "IBM Plex Mono", monospace;
+  --font-mono: "IBM Plex Mono", Menlo, monospace;
+
+  /* Light (Everforest light) anchors */
+  --canvas: #fdf6e3;          /* bg0 */
+  --ink: #5c6a72;             /* fg */
+
+  /* Accent (Everforest blue) */
+  --primary: #4484a8;
+  --primary-foreground: #fdf6e3;
+
+  /* Text tiers recompute from the active anchors in either mode */
+  --muted-foreground: color-mix(in oklch, var(--ink) 70%, var(--canvas));
+  --subtle-foreground: color-mix(in oklch, var(--ink) 58%, var(--canvas));
+  --readback-foreground: color-mix(in oklch, var(--ink) 64%, var(--canvas));
+
+  /* Semantic colors (light) */
+  --destructive: #f85552;
+  --destructive-text: #d34340;
+  --warning: #dfa000;
+  --attention: #f57d26;
+  --success: #8da101;
+  --diff-added: #8da101;
+  --diff-removed: #f85552;
+  --pr-merged: #ae3ec9;
+  --file-accent: #4484a8;
+}
+
+.dark {
+  /* Anchors (Everforest dark, medium) */
+  --canvas: #2d353f;          /* bg0 */
+  --ink: #d3c6aa;             /* fg */
+
+  /* Accent (Everforest teal/blue) */
+  --primary: #7fbbb3;
+  --primary-foreground: #2d353f;
+
+  /* Semantic colors (dark) */
+  --destructive: #e67e80;
+  --destructive-text: #e98b8d;
+  --warning: #dbbf7a;
+  --attention: #e69875;
+  --success: #a7c080;
+  --diff-added: #a7c080;
+  --diff-removed: #e67e80;
+  --pr-merged: #d699b6;
+  --file-accent: #7fbbb3;
+}
