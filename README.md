@@ -10,6 +10,7 @@ My current macOS development environment, stored using paths relative to `$HOME`
 - Shell startup files for zsh, bash, and tcsh
 - Git and GitHub CLI preferences
 - Ghostty, Zed, VS Code, and OpenCode settings
+- bb (agent orchestration) Everforest theme: app palette plus matching dark/light syntax highlighting, IBM Plex Mono throughout
 - Selected Codex and Claude agent configuration that contains no credentials or history
 
 The Hyper layer maps Caps Lock to Command-Control-Option-Shift when held and Escape when tapped. See `.skhdrc` for focus, workspace, move, resize, fullscreen, float, balance, Ghostty, Raycast, and help bindings.
