@@ -32,3 +32,7 @@
 
 # This local file currently contains an accidentally cached sign-in page.
 .cspell_global_words.txt
+
+# Collie runtime state (the .env with VAPID keys is covered by the .env rule above)
+.config/collie/serve.out
+.config/collie/tailscale-managed-handler

@@ -12,6 +12,7 @@ My current macOS development environment, stored using paths relative to `$HOME`
 - Ghostty, Zed, VS Code, and OpenCode settings
 - bb (agent orchestration) Everforest theme: app palette plus matching dark/light syntax highlighting, IBM Plex Mono throughout
 - Selected Codex and Claude agent configuration that contains no credentials or history
+- Collie config template (`.config/collie/.env.example`) — the live `.env` holds the Web Push private key and stays untracked
 
 The Hyper layer maps Caps Lock to Command-Control-Option-Shift when held and Escape when tapped. See `.skhdrc` for focus, workspace, move, resize, fullscreen, float, balance, Ghostty, Raycast, and help bindings.
 
@@ -29,6 +30,10 @@ brew bundle install
 Re-run `brew bundle dump --force` periodically to keep the file honest, then re-check the two fixes above before committing — a fresh dump will silently drop them again.
 
 After granting the required macOS Accessibility permissions, start `yabai`, `skhd`, and SketchyBar using their Homebrew service instructions. The external-display padding script contains this machine's display UUID; update `.config/yabai/update-display-padding.sh` when restoring to different hardware.
+
+## Collie
+
+[Collie](https://colliepwa.dev) is installed by its own script, not Homebrew: `curl -fsSL https://colliepwa.dev/install.sh | sh` puts the binary under `~/.local/share/collie` and links `collie` into `~/.local/bin`. Copy the tracked `.config/collie/.env.example` to `~/.config/collie/.env`, set `COLLIE_TRUSTED_USER`, and run `collie push-keys` to generate fresh VAPID keys. `collie start` creates the launchd agent and the `tailscale serve` mapping, but enabling Serve on the tailnet is a one-time browser step as tailnet admin — the full checklist is in the comments at the top of the template. Pair phones with `collie pair`.
 
 ## Restoring
 
