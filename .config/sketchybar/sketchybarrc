@@ -2,6 +2,17 @@
 
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
+# Register the installed font files with SketchyBar itself. CoreText can otherwise
+# fall back to Helvetica when fonts copied by Homebrew are not yet registered.
+for font_style in Medium SemiBold; do
+  font_path="$HOME/Library/Fonts/IBMPlexMono-${font_style}.otf"
+  if [[ -f "$font_path" ]]; then
+    sketchybar --load-font "$font_path"
+  else
+    printf 'SketchyBar: missing font %s; install font-ibm-plex-mono.\n' "$font_path" >&2
+  fi
+done
+
 # ------------------------------------------------------------
 # Palette
 # ------------------------------------------------------------
