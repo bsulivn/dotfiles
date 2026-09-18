@@ -63,6 +63,11 @@ cask "moonlight"
 cask "slack"
 # Open-source code editor
 cask "visual-studio-code"
+# Referenced by editor configuration, hotkeys, and terminal/status-bar fonts
+cask "zed"
+cask "raycast"
+cask "font-jetbrains-mono"
+cask "font-ibm-plex-mono"
 vscode "anthropic.claude-code"
 vscode "arcticicestudio.nord-visual-studio-code"
 vscode "catppuccin.catppuccin-vsc"
@@ -71,8 +76,8 @@ vscode "illixion.vscode-vibrancy-continued"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-vscode-remote.remote-containers"
 vscode "vscodevim.vim"
-cargo "agent-mem"
-cargo "agent-memory"
+# agent-mem and agent-memory are not published on crates.io.
+# Restore them separately once their original source repositories are known.
 cargo "cargo-audit"
 npm "@earendil-works/pi-coding-agent"
 npm "pi-acp"
