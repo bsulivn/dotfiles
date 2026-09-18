@@ -40,8 +40,8 @@ sketchybar --bar \
 # ------------------------------------------------------------
 
 default=(
-  icon.font="JetBrains Mono:Semibold:13.0"
-  label.font="JetBrains Mono:Medium:13.0"
+  icon.font="IBM Plex Mono:SemiBold:13.0"
+  label.font="IBM Plex Mono:Medium:13.0"
   "icon.color=$TEXT"
   "label.color=$TEXT"
   icon.padding_left=8
@@ -163,12 +163,12 @@ sketchybar \
   width=430 \
   icon="CAPS / SUPER" \
   icon.width=120 \
-  icon.font="JetBrains Mono:Semibold:13.0" \
+  icon.font="IBM Plex Mono:SemiBold:13.0" \
   icon.color=$GREEN \
   icon.padding_left=14 \
   icon.padding_right=8 \
   label="Command Layer" \
-  label.font="JetBrains Mono:Medium:12.0" \
+  label.font="IBM Plex Mono:Medium:12.0" \
   label.color=$MUTED \
   label.padding_left=8 \
   label.padding_right=14 \
@@ -184,11 +184,11 @@ for row_number in {1..10}; do
     --set "whichkey.row${row_number}" \
     width=430 \
     icon.width=120 \
-    icon.font="JetBrains Mono:Semibold:13.0" \
+    icon.font="IBM Plex Mono:SemiBold:13.0" \
     icon.color=$GREEN \
     icon.padding_left=14 \
     icon.padding_right=8 \
-    label.font="JetBrains Mono:Medium:13.0" \
+    label.font="IBM Plex Mono:Medium:13.0" \
     label.color=$TEXT \
     label.padding_left=8 \
     label.padding_right=14 \
