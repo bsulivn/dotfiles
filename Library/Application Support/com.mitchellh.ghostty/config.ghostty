@@ -1,5 +1,7 @@
-font-family = "JetBrains Mono"
-font-size = 17
-background-opacity = 0.85
-background-blur-radius = 20
-theme = Catppuccin Macchiato
+font-family = "IBM Plex Mono"
+font-size=15
+background-opacity = 0.88
+background-blur-radius = 15
+# Everforest Dark Hard (built into Ghostty)
+theme = Everforest Dark Hard
+macos-icon = blueprint
