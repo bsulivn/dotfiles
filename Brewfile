@@ -1,7 +1,6 @@
 tap "anomalyco/tap"
 tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
-tap "intersystems-community/tap", trusted: true
 tap "koekeishiya/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 # Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 brew "bun"
@@ -39,8 +38,6 @@ brew "anomalyco/tap/opencode", trusted: true
 brew "felixkratz/formulae/borders", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# MCP server connecting AI assistants to InterSystems IRIS — compile, test, debug ObjectScript without leaving the chat
-brew "intersystems-community/tap/iris-agentic-dev", trusted: true
 # NOTE: `brew bundle dump` silently drops these two -- Homebrew doesn't consider
 # them "installed on request" on this machine, so a fresh `brew bundle install`
 # would skip the window manager entirely without these explicit lines. Also note
@@ -71,10 +68,6 @@ vscode "arcticicestudio.nord-visual-studio-code"
 vscode "catppuccin.catppuccin-vsc"
 vscode "enkia.tokyo-night"
 vscode "illixion.vscode-vibrancy-continued"
-vscode "intersystems-community.objectscript-pack"
-vscode "intersystems-community.servermanager"
-vscode "intersystems-community.vscode-objectscript"
-vscode "intersystems.language-server"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-vscode-remote.remote-containers"
 vscode "vscodevim.vim"
