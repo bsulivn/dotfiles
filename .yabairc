@@ -38,8 +38,6 @@ yabai -m rule --remove vscode_opacity >/dev/null 2>&1 || true
 yabai -m rule --add label=vscode_opacity app="^Code$" opacity=0.85
 yabai -m rule --apply vscode_opacity
 
-# Focused window borders — Everforest Dark Hard
-borders \
-  active_color=0xffa7c080 \
-  inactive_color=0xff475258 \
-  width=4.0 &
+# Keep exactly one borders process, using the shared borders configuration.
+pkill -x borders >/dev/null 2>&1 || true
+"$HOME/.config/borders/bordersrc" &

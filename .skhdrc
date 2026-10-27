@@ -49,7 +49,7 @@ ctrl + alt + shift + cmd - 0x27 : $HOME/.config/sketchybar/plugins/whichkey.sh t
 # ------------------------------------------------------------
 
 ctrl + alt + shift + cmd - f : yabai -m window --toggle zoom-fullscreen
-ctrl + alt + shift + cmd - b : yabai -m space --balance
+ctrl + alt + shift + cmd - b : $HOME/.config/yabai/balance-spaces.sh
 ctrl + alt + shift + cmd - t : yabai -m window --toggle float
 
 
