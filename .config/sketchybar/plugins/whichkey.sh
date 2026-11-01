@@ -24,4 +24,5 @@ if ! command -v sketchybar >/dev/null 2>&1; then
   exit 0
 fi
 
+"$HOME/.config/sketchybar/plugins/whichkey-mode.sh" default keep-popup
 sketchybar --set whichkey popup.drawing="$popup_state" >/dev/null 2>&1 || exit 0

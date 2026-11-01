@@ -8,50 +8,36 @@ case "$requested_mode" in
     heading="CAPS / SUPER"
     secondary_heading="Command Layer"
     popup_state="off"
-    keys=("h j k l" "1–5" "m" "r" "f" "t" "b" "↵" "space" "'")
+    keys=("↵" "space" "c" "s" "'")
     descriptions=(
-      "Focus Left / Down / Up / Right"
-      "Switch Workspace"
-      "Move Mode"
-      "Resize Mode"
-      "Toggle Fullscreen"
-      "Toggle Float"
-      "Balance Layout"
       "Ghostty"
       "Raycast"
+      "Visual Studio Code"
+      "Safari"
       "Toggle Help"
     )
     ;;
-  move)
-    heading="MOVE MODE"
-    secondary_heading="Esc to exit"
-    popup_state="on"
-    keys=("h j k l" "1–5")
-    descriptions=(
-      "Swap Left / Down / Up / Right"
-      "Move Window to Workspace"
-    )
-    ;;
-  resize)
-    heading="RESIZE MODE"
-    secondary_heading="Esc to exit"
-    popup_state="on"
-    keys=("h j k l")
-    descriptions=("Resize Left / Down / Up / Right")
-    ;;
   *)
-    printf 'Usage: %s [default|move|resize]\n' "${0##*/}" >&2
+    printf 'Usage: %s [default]\n' "${0##*/}" >&2
     exit 2
     ;;
 esac
+
+# Refresh labels without changing visibility when the toggle invokes this script.
+if [ "${2:-}" = "keep-popup" ]; then
+  popup_state="keep"
+fi
 
 # Failing quietly keeps skhd usable while SketchyBar is restarting.
 if ! command -v sketchybar >/dev/null 2>&1; then
   exit 0
 fi
 
-sketchybar_arguments=(
-  --set whichkey popup.drawing=off
+sketchybar_arguments=()
+if [ "$popup_state" != "keep" ]; then
+  sketchybar_arguments+=(--set whichkey popup.drawing=off)
+fi
+sketchybar_arguments+=(
   --set whichkey.header
   "drawing=on"
   "icon=$heading"
@@ -79,6 +65,8 @@ for row_number in {1..10}; do
   fi
 done
 
-sketchybar_arguments+=(--set whichkey "popup.drawing=$popup_state")
+if [ "$popup_state" != "keep" ]; then
+  sketchybar_arguments+=(--set whichkey "popup.drawing=$popup_state")
+fi
 
 sketchybar "${sketchybar_arguments[@]}" >/dev/null 2>&1 || exit 0

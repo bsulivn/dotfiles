@@ -80,7 +80,7 @@ for sid in 1 2 3 4 5; do
     background.border_width=1
     "background.border_color=$GREEN"
     script="$PLUGIN_DIR/space.sh"
-    click_script="yabai -m space --focus $sid"
+    click_script="/opt/homebrew/bin/skhd -k 'ctrl - $sid'"
   )
 
   sketchybar \

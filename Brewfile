@@ -28,6 +28,7 @@ brew "node"
 brew "poppler"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+brew "spaceship"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Generate your Xcode project from a spec file and your folder structure
@@ -38,15 +39,7 @@ brew "anomalyco/tap/opencode", trusted: true
 brew "felixkratz/formulae/borders", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# NOTE: `brew bundle dump` silently drops these two -- Homebrew doesn't consider
-# them "installed on request" on this machine, so a fresh `brew bundle install`
-# would skip the window manager entirely without these explicit lines. Also note
-# `koekeishiya/formulae` here actually resolves to a fork (asmvik/homebrew-formulae),
-# not the upstream koekeishiya repo -- see the tap line above and the README.
-# Fully-qualified because `asmvik/formulae` (tapped below too) ships its own
-# conflicting `yabai`/`skhd`, which makes a bare `brew "yabai"` ambiguous.
-# Window manager
-brew "koekeishiya/formulae/yabai"
+# Keep skhd explicit; it may be omitted by brew bundle dump.
 # Hotkey daemon
 brew "koekeishiya/formulae/skhd"
 # Anthropic's official Claude AI desktop app
