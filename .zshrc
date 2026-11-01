@@ -12,6 +12,7 @@ compinit
 export PATH="$HOME/.local/bin:$PATH"
 
 # Spaceship prompt (installed via Homebrew)
+SPACESHIP_CHAR_SYMBOL="🍀 ➜ "
 if (( $+commands[brew] )); then
   spaceship_prompt="$(brew --prefix)/opt/spaceship/spaceship.zsh"
   [[ -f "$spaceship_prompt" ]] && source "$spaceship_prompt"

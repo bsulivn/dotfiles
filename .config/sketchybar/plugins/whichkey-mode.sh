@@ -8,13 +8,14 @@ case "$requested_mode" in
     heading="CAPS / SUPER"
     secondary_heading="Command Layer"
     popup_state="off"
-    keys=("↵" "space" "c" "s" "'")
+    keys=("↵" "space" "c" "s" "'" "⌘ space")
     descriptions=(
       "Ghostty"
-      "Tinycast"
+      "Spotlight"
       "Visual Studio Code"
       "Safari"
       "Toggle Help"
+      "Tinycast (global)"
     )
     ;;
   *)
