@@ -53,7 +53,7 @@ but its server is optional: `brew services start herdr`.
 - The `koekeishiya/formulae` tap resolves to the `asmvik/homebrew-formulae` fork. The fully qualified `skhd` formula avoids ambiguity with the separately tapped `asmvik/formulae`.
 
 Review `brew bundle dump --force` changes before committing: keep the explicit skhd
-entry and the fonts, Raycast, and Zed required by the configs. Keep InterSystems
+entry and the fonts, Tinycast, and Zed required by the configs. Keep InterSystems
 packages excluded. `agent-mem` and `agent-memory` are unavailable on crates.io and are
 excluded from automatic installation until their original sources are known.
 

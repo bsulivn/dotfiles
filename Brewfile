@@ -1,3 +1,4 @@
+tap "abue-ammar/tinycast"
 tap "anomalyco/tap"
 tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
@@ -58,7 +59,7 @@ cask "slack"
 cask "visual-studio-code"
 # Referenced by editor configuration, hotkeys, and terminal/status-bar fonts
 cask "zed"
-cask "raycast"
+cask "abue-ammar/tinycast/tinycast", trusted: true
 cask "font-jetbrains-mono"
 cask "font-ibm-plex-mono"
 vscode "anthropic.claude-code"

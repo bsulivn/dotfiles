@@ -11,7 +11,7 @@ case "$requested_mode" in
     keys=("↵" "space" "c" "s" "'")
     descriptions=(
       "Ghostty"
-      "Raycast"
+      "Tinycast"
       "Visual Studio Code"
       "Safari"
       "Toggle Help"
